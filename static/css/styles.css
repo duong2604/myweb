@@ -1,0 +1,12 @@
+.button {
+  color: whitesmoke;
+  padding: 10px 8px;
+  background: yellow;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 30px;
+}
+
+.heading {
+  color: red;
+}
