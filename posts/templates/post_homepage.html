@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,10 +16,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     {% comment %} font google {% endcomment %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
   <body>
     <header>
       <nav
@@ -78,19 +82,30 @@
     </header>
 
     <main>
-      <section id="banner" class="d-flex gap-3 p-5">
-        <div class="w-50 py-3">
+      <section id="banner" class="d-flex gap-lg-5 p-5">
+        <div class="w-50 py-md-3 py-lg-5">
           <h2>Welcome, guys!</h2>
-          <p class="fw-ligth">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Et minus voluptates, voluptatibus quisquam explicabo dolorum autem accusantium? Ex, ea natus, quo officia sit eveniet dolorem quam rerum ut similique incidunt.
+          <p class="fw-ligth">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et minus
+            voluptates, voluptatibus quisquam explicabo dolorum autem
+            accusantium? Ex, ea natus, quo officia sit eveniet dolorem quam
+            rerum ut similique incidunt.
           </p>
           <button class="btn btn-outline-info">Read more</button>
         </div>
-       <div class="w-50">
-        <img src="{% static 'images/hero.png' %}" alt="" class="w-100">
-       </div>
+        <div class="w-50">
+          <img src="{% static 'images/hero.png' %}" alt="" class="w-100" />
+        </div>
       </section>
 
+      <section >
+        <h2 class="text-center mb-5"> My Posts</h2>
+       <div class="container d-flex flex-wrap justify-content-start align-item-center gap-3">
+        {% for item in data %}
+            {% include "./item.html" %}
+        {% endfor %}
+       </div>
+      </section>
     </main>
 
     <footer></footer>
